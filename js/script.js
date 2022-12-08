@@ -1,4 +1,4 @@
- // Created by: Alex Nelson
+// Created by: Alex Nelson
 // Created on: Nov 2022
 // This file contains the JS functions for index.html
 
@@ -21,7 +21,7 @@ function calculateAgeRating() {
   const age = parseInt(document.getElementById("age").value)
   const day = document.getElementById("days").value
   //Process that determines if you are eligible
-  if ((age > 12 && age < 21) && (day == "monday" || day == "tuesday")) {
+  if (age > 12 && age < 21 && (day == "monday" || day == "tuesday")) {
     document.getElementById("output").innerHTML = "Eligible."
   }
   //Shows "Not Eligible" if you are not eligible
