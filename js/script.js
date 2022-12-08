@@ -1,5 +1,5 @@
-// Created by: Alex Nelson
-// Created on: Oct 2022
+ // Created by: Alex Nelson
+// Created on: Nov 2022
 // This file contains the JS functions for index.html
 
 "use strict"
@@ -14,8 +14,18 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * This function determines whether or not someone is eligible for a discount.
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function calculateAgeRating() {
+  //inputs
+  const age = parseInt(document.getElementById("age").value)
+  const day = document.getElementById("days").value
+  //Process that determines if you are eligible
+  if ((age > 12 && age < 21) && (day == "monday" || day == "tuesday")) {
+    document.getElementById("output").innerHTML = "Eligible."
+  }
+  //Shows "Not Eligible" if you are not eligible
+  else {
+    document.getElementById("output").innerHTML = "Not Eligible"
+  }
 }

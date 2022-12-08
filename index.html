@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
+<!--- ICS2O-With and or statements --->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,18 +8,16 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
     <link
       rel="canonical"
-      href="https://Alex-Nelson-1.github.io/ISC2O-UNIT5-04-JS-AND-OR/"
+      href="https://Alex-Nelson-1.github.io/ICS2O-UNIT5-03-JS-ELSE-IF/"
     />
-    <link
-      rel="manifest"
-      href="/ISC2O-UNIT5-04-JS-AND-OR/manifest.webmanifest"
-    />
+    <link rel="manifest" href="/ICS2O-UNIT5-03-JS-ELSE-IF/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
+
+    <!-- Links to Material -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -44,39 +42,60 @@
         href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css"
       />
     </noscript>
+    <!-- Favicon code -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" /> 
+    <title>And Or statements</title>
   </head>
-  <title>My first PWA</title>
   <body>
+    <!-- Code linking JS and reference to MDL -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
+    <!-- Header code -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title">Discount Eligibility</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <!-- Raised button with ripple -->
+        <!-- Explination -->
+        <h5>Students between the age of 13 and 20 get a student discount on Monday and Tuesday. Please select a day and your age to see if you are eligible for a student discount.</h5>
+        <!-- Code for the selector -->
+        <label for="day">Choose a day of the week:</label>
+        <select name="days" id="days">
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option>
+        </select>
+        <!-- Textfield code -->
+          <form action="#">
+          Age: 
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="age"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="age">Age</label>
+            <span class="mdl-textfield__error">Numbers Only!</span>
+          </div>
+        </form>
+        <!-- Raised button with ripple and JS function -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          onclick="calculateAgeRating()"
         >
-          Say "Hello, World!"
+          Age rating
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <div id="output"></div>
       </main>
     </div>
   </body>
